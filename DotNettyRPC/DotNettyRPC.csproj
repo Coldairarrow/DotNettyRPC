@@ -10,6 +10,7 @@
     <PackageProjectUrl>https://github.com/Coldairarrow/DotNettyRPC</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Coldairarrow/DotNettyRPC</RepositoryUrl>
     <PackageReleaseNotes />
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
