@@ -52,10 +52,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Coldairarrow.Util\Coldairarrow.Util.csproj">
-      <Project>{1127725A-2DE3-427E-A3F0-79992EE8ED66}</Project>
-      <Name>Coldairarrow.Util</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\00.Common.csproj">
       <Project>{9346E459-9DFC-4515-90E8-933A6B8F59B5}</Project>
       <Name>00.Common</Name>
