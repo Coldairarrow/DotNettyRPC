@@ -14,7 +14,7 @@ using System.Xml;
 
 namespace Coldairarrow.Util
 {
-    public static partial class Extention
+    internal static partial class Extention
     {
         /// <summary>
         /// 转为字节数组

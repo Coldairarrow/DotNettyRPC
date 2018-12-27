@@ -7,7 +7,7 @@ namespace Coldairarrow.Util
     /// <summary>
     /// 异常处理帮助类
     /// </summary>
-    public static class ExceptionHelper
+    internal static class ExceptionHelper
     {
         /// <summary>
         /// 获取异常位置

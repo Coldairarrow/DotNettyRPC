@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Coldairarrow.Util
 {
-    public static partial class Extention
+    internal static partial class Extention
     {
         /// <summary>
         /// 构造函数
