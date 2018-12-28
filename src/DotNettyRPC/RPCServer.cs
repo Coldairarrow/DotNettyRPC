@@ -8,10 +8,17 @@ using System.Collections.Generic;
 
 namespace Coldairarrow.DotNettyRPC
 {
+    /// <summary>
+    /// RPC服务端
+    /// </summary>
     public class RPCServer
     {
         #region 构造函数
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="port">监听端口</param>
         public RPCServer(int port)
         {
             _port = port;

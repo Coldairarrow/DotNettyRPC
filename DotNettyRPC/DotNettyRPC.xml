@@ -1,0 +1,412 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNettyRPC</name>
+    </assembly>
+    <members>
+        <member name="T:Coldairarrow.DotNettyRPC.RPCClientFactory">
+            <summary>
+            客户端工厂
+            </summary>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCClientFactory.GetClient``1(System.String,System.Int32)">
+            <summary>
+            获取客户端
+            注：默认服务名为接口名
+            </summary>
+            <typeparam name="T">接口定义类型</typeparam>
+            <param name="serverIp">远程服务IP</param>
+            <param name="port">远程服务端口</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCClientFactory.GetClient``1(System.String,System.Int32,System.String)">
+            <summary>
+            获取客户端
+            注：自定义服务名
+            </summary>
+            <typeparam name="T">接口定义类型</typeparam>
+            <param name="serverIp">远程服务IP</param>
+            <param name="port">远程服务端口</param>
+            <param name="serviceName">服务名</param>
+            <returns></returns>
+        </member>
+        <member name="T:Coldairarrow.DotNettyRPC.RPCServer">
+            <summary>
+            RPC服务端
+            </summary>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCServer.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="port">监听端口</param>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCServer.RegisterService``2">
+            <summary>
+            注册服务
+            注：默认注册的服务为接口名
+            </summary>
+            <typeparam name="IService">服务接口</typeparam>
+            <typeparam name="Service">服务实现</typeparam>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCServer.RegisterService``2(System.String)">
+            <summary>
+            注册服务,指定服务名
+            </summary>
+            <typeparam name="IService">服务接口</typeparam>
+            <typeparam name="Service">服务实现</typeparam>
+            <param name="serviceName">服务名</param>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCServer.Start">
+            <summary>
+            开始运行服务
+            </summary>
+        </member>
+        <member name="M:Coldairarrow.DotNettyRPC.RPCServer.Stop">
+            <summary>
+            停止服务
+            </summary>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.#cctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToBytes(System.Object)">
+            <summary>
+            将一个object对象序列化，返回一个byte[]         
+            </summary> 
+            <param name="obj">能序列化的对象</param>
+            <returns></returns> 
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.IsNullOrEmpty(System.Object)">
+            <summary>
+            判断是否为Null或者空
+            </summary>
+            <param name="obj">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToJson(System.Object)">
+            <summary>
+            将对象序列化成Json字符串
+            </summary>
+            <param name="obj">需要序列化的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.EntityToJson(System.Object)">
+            <summary>
+            实体类转json数据，速度快
+            </summary>
+            <param name="t">实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.DeepClone``1(``0)">
+            <summary>
+            深复制
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="obj">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToXmlStr``1(``0)">
+            <summary>
+            将对象序列化为XML字符串
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="obj">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToXmlStr``1(``0,System.String)">
+            <summary>
+            将对象序列化为XML字符串
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="obj">对象</param>
+            <param name="rootNodeName">根节点名(建议设为xml)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            获取某属性值
+            </summary>
+            <param name="obj">对象</param>
+            <param name="propertyName">属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.SetPropertyValue(System.Object,System.String,System.Object)">
+            <summary>
+            获取某属性值
+            </summary>
+            <param name="obj">对象</param>
+            <param name="propertyName">属性名</param>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToBytes_FromBase64Str(System.String)">
+            <summary>
+            转为字节数组
+            </summary>
+            <param name="base64Str">base64字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToMD5String(System.String)">
+            <summary>
+            转换为MD5加密后的字符串（默认加密为32位）
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.Base64Encode(System.String)">
+            <summary>
+            Base64加密
+            注:默认采用UTF8编码
+            </summary>
+            <param name="source">待加密的明文</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.Base64Encode(System.String,System.Text.Encoding)">
+            <summary>
+            Base64加密
+            </summary>
+            <param name="source">待加密的明文</param>
+            <param name="encoding">加密采用的编码方式</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.Base64Decode(System.String)">
+            <summary>
+            Base64解密
+            注:默认使用UTF8编码
+            </summary>
+            <param name="result">待解密的密文</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.Base64Decode(System.String,System.Text.Encoding)">
+            <summary>
+            Base64解密
+            </summary>
+            <param name="result">待解密的密文</param>
+            <param name="encoding">解密采用的编码方式，注意和加密时采用的方式一致</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToSHA1Bytes(System.String)">
+            <summary>
+            计算SHA1摘要
+            注：默认使用UTF8编码
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToSHA1Bytes(System.String,System.Text.Encoding)">
+            <summary>
+            计算SHA1摘要
+            </summary>
+            <param name="str">字符串</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToSHA1String(System.String)">
+            <summary>
+            转为SHA1哈希加密字符串
+            注：默认使用UTF8编码
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToSHA1String(System.String,System.Text.Encoding)">
+            <summary>
+            转为SHA1哈希
+            </summary>
+            <param name="str">字符串</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToInt(System.String)">
+            <summary>
+            string转int
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToInt_FromBinString(System.String)">
+            <summary>
+            二进制字符串转为Int
+            </summary>
+            <param name="str">二进制字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToInt0X(System.String)">
+            <summary>
+            将16进制字符串转为Int
+            </summary>
+            <param name="str">数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToDouble(System.String)">
+            <summary>
+            转换为double
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToBytes(System.String)">
+            <summary>
+            string转byte[]
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToBytes(System.String,System.Text.Encoding)">
+            <summary>
+            string转byte[]
+            </summary>
+            <param name="str">字符串</param>
+            <param name="theEncoding">需要的编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.To0XBytes(System.String)">
+            <summary>
+            将16进制字符串转为Byte数组
+            </summary>
+            <param name="str">16进制字符串(2个16进制字符表示一个Byte)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToASCIIBytes(System.String)">
+            <summary>
+            将ASCII码形式的字符串转为对应字节数组
+            注：一个字节一个ASCII码字符
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToDateTime(System.String)">
+            <summary>
+            转换为日期格式
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToObject``1(System.String)">
+            <summary>
+            将Json字符串反序列化为对象
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="jsonStr">Json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.RemoveAt(System.String)">
+            <summary>
+            删除Json字符串中键中的@符号
+            </summary>
+            <param name="jsonStr">json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToObject(System.String,System.Type)">
+            <summary>
+            将Json字符串反序列化为对象
+            </summary>
+            <param name="jsonStr">json字符串</param>
+            <param name="type">对象类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.XmlStrToObject``1(System.String)">
+            <summary>
+            将XML字符串反序列化为对象
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="xmlStr">XML字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.XmlStrToJObject(System.String)">
+            <summary>
+            将XML字符串反序列化为对象
+            </summary>
+            <param name="xmlStr">XML字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToList``1(System.String)">
+            <summary>
+            将Json字符串转为List'T'
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="jsonStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToDataTable(System.String)">
+            <summary>
+            将Json字符串转为DataTable
+            </summary>
+            <param name="jsonStr">Json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToJObject(System.String)">
+            <summary>
+            将Json字符串转为JObject
+            </summary>
+            <param name="jsonStr">Json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToJArray(System.String)">
+            <summary>
+            将Json字符串转为JArray
+            </summary>
+            <param name="jsonStr">Json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToEntity``1(System.String)">
+            <summary>
+            json数据转实体类,仅仅应用于单个实体类，速度非常快
+            </summary>
+            <typeparam name="T">泛型参数</typeparam>
+            <param name="json">json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToFirstUpperStr(System.String)">
+            <summary>
+            转为首字母大写
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToFirstLowerStr(System.String)">
+            <summary>
+            转为首字母小写
+            </summary>
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.Extention.ToIPEndPoint(System.String)">
+            <summary>
+            转为网络终结点IPEndPoint
+            </summary>=
+            <param name="str">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:Coldairarrow.Util.ExceptionHelper">
+            <summary>
+            异常处理帮助类
+            </summary>
+        </member>
+        <member name="M:Coldairarrow.Util.ExceptionHelper.GetExceptionAddr(System.Exception)">
+            <summary>
+            获取异常位置
+            </summary>
+            <param name="e">异常</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.ExceptionHelper.GetExceptionAllMsg(System.Exception,System.Int32)">
+            <summary>
+            获取异常消息
+            </summary>
+            <param name="ex">捕捉的异常</param>
+            <param name="level">内部异常层级</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coldairarrow.Util.ExceptionHelper.GetExceptionAllMsg(System.Exception)">
+            <summary>
+            获取异常消息
+            </summary>
+            <param name="ex">捕捉的异常</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

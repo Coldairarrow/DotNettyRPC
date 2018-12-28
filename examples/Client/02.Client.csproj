@@ -52,13 +52,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\DotNettyRPC\DotNettyRPC.csproj">
+      <Project>{20203900-CE4A-4B88-A006-82DF4F9D9A12}</Project>
+      <Name>DotNettyRPC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\00.Common.csproj">
       <Project>{9346E459-9DFC-4515-90E8-933A6B8F59B5}</Project>
       <Name>00.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DotNettyRPC\DotNettyRPC.csproj">
-      <Project>{689FC33C-B594-4CF6-9048-CE061F3E43DD}</Project>
-      <Name>DotNettyRPC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
