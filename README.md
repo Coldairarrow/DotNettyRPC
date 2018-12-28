@@ -27,6 +27,12 @@ DotNettyRPC是一个基于DotNetty的跨平台RPC框架，支持.NET45以及.NET
 ```
 ### 3.3服务端
 ``` c#
+using Coldairarrow.DotNettyRPC;
+using Common;
+using System;
+
+namespace Server
+{
     class Program
     {
         static void Main(string[] args)
@@ -38,9 +44,19 @@ DotNettyRPC是一个基于DotNetty的跨平台RPC框架，支持.NET45以及.NET
             Console.ReadLine();
         }
     }
+}
+
 ```
 ### 3.4客户端
 ``` c#
+using Coldairarrow.DotNettyRPC;
+using Common;
+using System;
+
+namespace Client
+{
+    class Program
+    {
         static void Main(string[] args)
         {
             IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 9999);
@@ -48,6 +64,9 @@ DotNettyRPC是一个基于DotNetty的跨平台RPC框架，支持.NET45以及.NET
             Console.WriteLine(msg);
             Console.ReadLine();
         }
+    }
+}
+
 ```
 ### 3.5运行
 先运行服务端,再运行客户端,即可在客户端输出Hello
