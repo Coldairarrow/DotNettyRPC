@@ -10,11 +10,11 @@
     <PackageProjectUrl>https://github.com/Coldairarrow/DotNettyRPC</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Coldairarrow/DotNettyRPC</RepositoryUrl>
     <PackageReleaseNotes />
-    <Version>1.4.0</Version>
+    <Version>1.4.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-    <DocumentationFile>DotNettyRPC.xml</DocumentationFile>
+    <DocumentationFile>obj\Debug\netstandard2.0\DotNettyRPC.xml</DocumentationFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
