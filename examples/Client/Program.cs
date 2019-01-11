@@ -52,8 +52,8 @@ namespace Client
 
         static void Main(string[] args)
         {
-            IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 9999);
-            var msg = client.SayHello("Hello");
+            IOrderService client = RPCClientFactory.GetClient<IOrderService>("127.0.0.1", 9999);
+            var msg = client.CalculateFinalOrderSum(999, 666);
             Console.WriteLine(msg);
             Console.ReadLine();
         }

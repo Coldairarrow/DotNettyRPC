@@ -61,7 +61,6 @@ namespace Coldairarrow.DotNettyRPC
                     throw new Exception("未找到该方法");
                 var paramters = requestModel.Paramters.ToArray();
                 var methodParamters = method.GetParameters();
-                List<object> newParamters = new List<object>();
                 for (int i = 0; i < methodParamters.Length; i++)
                 {
                     if (paramters[i].GetType() != methodParamters[i].ParameterType)
@@ -69,7 +68,7 @@ namespace Coldairarrow.DotNettyRPC
                         paramters[i] = paramters[i].ToJson().ToObject(methodParamters[i].ParameterType);
                     }
                 }
-                var res = method.Invoke(service, requestModel.Paramters.ToArray());
+                var res = method.Invoke(service, paramters);
 
                 response.Success = true;
                 response.Data = res.ToJson();
