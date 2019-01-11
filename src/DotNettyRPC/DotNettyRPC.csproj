@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/Coldairarrow/DotNettyRPC</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Coldairarrow/DotNettyRPC</RepositoryUrl>
     <PackageReleaseNotes />
-    <Version>1.4.1</Version>
+    <Version>1.4.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
