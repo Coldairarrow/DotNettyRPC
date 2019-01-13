@@ -42,7 +42,7 @@ namespace Coldairarrow.DotNettyRPC
                 IChannel client = null;
                 try
                 {
-                    client = _bootstrap.ConnectAsync($"{ServerIp}:{ServerPort}".ToIPEndPoint()).Result;
+                    client = _bootstrap.ConnectAsync($"{ServerIp}:{ServerPort}".ToIPEndPoint()).RunSync();
                 }
                 catch
                 {
