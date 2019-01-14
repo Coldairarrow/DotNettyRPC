@@ -72,7 +72,12 @@ namespace Coldairarrow.DotNettyRPC
                     throw new Exception("服务器超时未响应");
                 else if (response.Success)
                 {
-                    result = response.Data.ToObject(ServiceType.GetMethod(binder.Name).ReturnType);
+                    Type returnType = ServiceType.GetMethod(binder.Name).ReturnType;
+                    if (returnType == typeof(void))
+                        result = null;
+                    else
+                        result = response.Data.ToObject(returnType);
+
                     return true;
                 }
                 else

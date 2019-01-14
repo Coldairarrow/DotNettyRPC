@@ -1,10 +1,12 @@
-﻿namespace Common
+﻿using System;
+
+namespace Common
 {
     public class Hello : IHello
     {
-        public string SayHello(string msg)
+        public void SayHello(string msg)
         {
-            return msg;
+            Console.WriteLine(msg);
         }
     }
 }

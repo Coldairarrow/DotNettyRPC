@@ -33,7 +33,7 @@ namespace Client
                         string msg = string.Empty;
                         try
                         {
-                            msg = client.SayHello("Hello");
+                            //msg = client.SayHello("Hello");
                             //Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")}:{msg}");
                         }
                         catch (Exception ex)
@@ -53,8 +53,8 @@ namespace Client
         static void Main(string[] args)
         {
             IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 9999);
-            var msg = client.SayHello("Hello");
-            Console.WriteLine(msg);
+            client.SayHello("Hello");
+            Console.WriteLine("完成");
             Console.ReadLine();
         }
     }
