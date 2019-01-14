@@ -12,7 +12,7 @@ namespace WebClient.Controllers
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 9999);
-            var res = client.SayHello("aa");
+            client.SayHello("aa");
             stopwatch.Stop();
             return Content(stopwatch.ElapsedMilliseconds.ToString());
         }
