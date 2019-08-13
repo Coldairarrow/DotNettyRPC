@@ -8,7 +8,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            RPCServer rPCServer = new RPCServer(9999);
+            RPCServer rPCServer = new RPCServer(39999);
             rPCServer.RegisterService<IHello, Hello>();
             rPCServer.Start();
 

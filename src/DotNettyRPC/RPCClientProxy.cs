@@ -22,8 +22,8 @@ namespace Coldairarrow.DotNettyRPC
                 .Handler(new ActionChannelInitializer<ISocketChannel>(channel =>
                 {
                     IChannelPipeline pipeline = channel.Pipeline;
-                    pipeline.AddLast("framing-enc", new LengthFieldPrepender(2));
-                    pipeline.AddLast("framing-dec", new LengthFieldBasedFrameDecoder(ushort.MaxValue, 0, 2, 0, 2));
+                    pipeline.AddLast("framing-enc", new LengthFieldPrepender(8));
+                    pipeline.AddLast("framing-dec", new LengthFieldBasedFrameDecoder(int.MaxValue, 0, 8, 0, 8));
 
                     pipeline.AddLast(new ClientHandler(_clientWait));
                 }));

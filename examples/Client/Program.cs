@@ -12,7 +12,7 @@ namespace Client
         static void DotNettyRPCTest()
         {
             int threadCount = 1;
-            int port = 9999;
+            int port = 39999;
             int count = 10000;
             int errorCount = 0;
             RPCServer rPCServer = new RPCServer(port);
@@ -52,7 +52,7 @@ namespace Client
 
         static void Main(string[] args)
         {
-            IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 9999);
+            IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 39999);
             client.SayHello("Hello");
             Console.WriteLine("完成");
             Console.ReadLine();
