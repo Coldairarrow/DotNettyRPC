@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 namespace Coldairarrow.Util
 {
     /// <summary>
+    /// 异步转同步,防止ASP.NET中死锁
     /// https://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously
     /// </summary>
-    internal static class AsyncHelpers
+    internal static class TaskHelper
     {
-        /// <summary>
-        /// Execute's an async Task<T> method which has a void return value synchronously
-        /// </summary>
-        /// <param name="task">Task<T> method to execute</param>
         public static void RunSync(Func<Task> task)
         {
             var oldContext = SynchronizationContext.Current;
@@ -40,12 +37,6 @@ namespace Coldairarrow.Util
             SynchronizationContext.SetSynchronizationContext(oldContext);
         }
 
-        /// <summary>
-        /// Execute's an async Task<T> method which has a T return type synchronously
-        /// </summary>
-        /// <typeparam name="T">Return Type</typeparam>
-        /// <param name="task">Task<T> method to execute</param>
-        /// <returns></returns>
         public static T RunSync<T>(Func<Task<T>> task)
         {
             var oldContext = SynchronizationContext.Current;
