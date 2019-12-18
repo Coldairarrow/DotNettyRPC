@@ -14,7 +14,8 @@ namespace WebClient.Controllers
             IHello client = RPCClientFactory.GetClient<IHello>("127.0.0.1", 39999);
             client.SayHello("aa");
             stopwatch.Stop();
-            return Content(stopwatch.ElapsedMilliseconds.ToString());
+            var ms = (double)stopwatch.ElapsedTicks / 10000;
+            return Content($"{ms}ms");
         }
     }
 }
